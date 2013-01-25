@@ -1,0 +1,67 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.rbx
+
+# Mac OS
+.DS_Store
+*.swp
+*.lock
+profile
+
+# JVM
+*.class
+*.log
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+
+# Java Package Files #
+*.jar
+*.war
+*.ear
+
+# C++ Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.so.*
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Ruby
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/

@@ -31,8 +31,7 @@ def parse_str(str)
 end
 
 def time_to_s(time)
-  h, m, s, ms = time.map { |i| i.to_s }
-  return "#{h.rjust(2, "0")}:#{m.rjust(2, "0")}:#{s.rjust(2, "0")},#{ms.rjust(3, "0")}"
+  return '%02d:%02d:%02d,%03d' % time
 end
 
 def shift(time, s_diff)

@@ -17,6 +17,10 @@ class TestSRTTimer < MiniTest::Unit::TestCase
     time = [1, 0, 50, 73]
     assert_equal [1, 1, 25, 73], shift(time, 35)
     assert_equal [1, 0, 20, 73], shift(time, -30)
+    assert_equal [0, 59, 50, 73], shift(time, -60)
+
+    # time cannot be negative
+    assert_equal [0, 0, 0, 0], shift([0, 0, 10, 0], -20)
   end
 end
 
@@ -36,7 +40,8 @@ def shift(time, s_diff)
   s += s_diff
   m, s = m + s / 60, s % 60
   h, m = h + m / 60, m % 60
-  return [h, m, s, ms]
+
+  return (h < 0) ? [0, 0, 0, 0] : [h, m, s, ms]
 end
 
 if ARGV.length != 2
